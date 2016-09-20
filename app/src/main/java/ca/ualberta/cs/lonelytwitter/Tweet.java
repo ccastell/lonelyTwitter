@@ -3,15 +3,24 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
+<<<<<<< HEAD
  * Created by watts1 on 9/15/16.
  */
 public abstract class Tweet implements Tweetable {
+=======
+ * Created by watts1 on 9/13/16.
+ */
+public abstract class Tweet {
+>>>>>>> origin/f16Tuesday
     private String message;
     private Date date;
 
     public Tweet(String message){
         this.message = message;
+<<<<<<< HEAD
         this.date = new Date();
+=======
+>>>>>>> origin/f16Tuesday
     }
 
     public Tweet(String message, Date date){
@@ -24,9 +33,16 @@ public abstract class Tweet implements Tweetable {
 
 
 
+<<<<<<< HEAD
     public void setMessage(String message) throws TweetTooLongException {
         if (message.length() > 140){
             //Do Something!
+=======
+
+    public void setMessage(String message) throws TweetTooLongException {
+        if (message.length() > 140) {
+            //Do something
+>>>>>>> origin/f16Tuesday
             throw new TweetTooLongException();
         }
         this.message = message;
