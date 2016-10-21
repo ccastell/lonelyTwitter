@@ -30,6 +30,10 @@ public class ElasticsearchTweetController {
 
             ArrayList<NormalTweet> tweets = new ArrayList<NormalTweet>();
 
+            //String search_string = "{\"from\": 0,\"size\":10000}";
+            String search_string = "{\"from\":0, \"size\": 10000, \"query\": {\"match\":{\"message\":\"" + search_parameters[0] + "\"}}}";
+            
+
             // assume that search_parameters[0] is the only search term we are interested in using
             Search search = new Search.Builder(search_parameters[0])
                     .addIndex("testing")
@@ -53,6 +57,9 @@ public class ElasticsearchTweetController {
             return tweets;
         }
     }
+
+
+
 
 
     // TODO we need a function which adds a tweet!
